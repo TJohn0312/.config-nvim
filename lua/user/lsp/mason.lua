@@ -1,13 +1,29 @@
 local servers = {
-	"sumneko_lua",
-	"cssls",
-	"html",
-	"tsserver",
-	"pyright",
-	"bashls",
-	"jsonls",
-	"yamlls",
+  "grammarly", --Dictonary
+  "diagnosticls", --general purpose
+
+	-- "cssls", --Css NotWorking
+	"cssmodules_ls", --Css
+  -- "html", --Html NotWorking
+  "quick_lint_js", --javascript
+  "tsserver", --javascript / typescript
+  -- "typescript-language-server", --NotWorking
+
+  "emmet_ls", --Emmit
+  "jsonls", --JSON
+
+	"sumneko_lua", --lua
+  "dockerls", --Docker
+
+  -- "sqlls", --SQL
+  -- "sqls", --SQL
+
+  -- "vuels", --vue
+  -- "volar", --vue
+
+  -- "dfx_language-service", --Mokoko
 }
+-- List of servers @ https://github.com/williamboman/mason-ispconfig.nvim
 
 local settings = {
 	ui = {

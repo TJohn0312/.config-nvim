@@ -15,6 +15,20 @@ nvim_tree.setup {
     enable = true,
     update_cwd = true,
   },
+  view = {
+    number = true,
+    relativenumber = true,
+    signcolumn = "auto", --no, yes, auto, number
+    width = 30,
+    side = "left",
+    mappings = {
+      list = {
+        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
+        { key = "h", cb = tree_cb "close_node" },
+        { key = "v", cb = tree_cb "vsplit" },
+      },
+    },
+  },
   renderer = {
     root_folder_modifier = ":t",
     icons = {
@@ -51,17 +65,6 @@ nvim_tree.setup {
       info = "",
       warning = "",
       error = "",
-    },
-  },
-  view = {
-    width = 30,
-    side = "left",
-    mappings = {
-      list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
-      },
     },
   },
 }

@@ -21,39 +21,70 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-
+-- New window
+keymap("n", "ss", ":split<Return><C-w>j")
+keymap("n", "sv", ":vsplit<Return><C-w>l")
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+-- Save & Quit
+keymap("n", "<leader>w", ":w<CR>")
+keymap("n", "<leader>q", ":q<CR>")
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
--- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
-
 -- Better paste
 keymap("v", "p", '"_dP', opts)
+
+-- Better Scroll
+keymap("n", "<C-d>", "<C-d>zz")
+keymap("n", "<C-u>", "<C-u>zz")
+keymap("n", "<C-b>", "<C-b>zz")
+keymap("n", "<C-f>", "<C-f>zz")
+
+-- Moveing lines
+keymap("n", "<A-j>", ":m+1<CR>")
+keymap("n", "<A-k>", ":m-2<CR>")
+
+
 
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+keymap("i", "kj", "<ESC>", opts)
+
+
 
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Plugins --
+keymap("n", "<S-x>", "<C-v>", opts)
 
+
+
+-- Plugins --
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+-- BufferLine
+-- Navigate buffers
+keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
+-- Close buffers
+keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+-- :BufferLinePick<CR>
+-- :BufferLinePickClose<CR>
+-- :BufferLineSortByDirectory
+-- :BufferLineSortByExtention
+-- :BufferLineSortByRelativeDirectory
+-- :BufferLineSortByTabs
+
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)

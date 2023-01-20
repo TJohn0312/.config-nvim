@@ -51,8 +51,8 @@ cmp.setup({
 	},
 
 	mapping = cmp.mapping.preset.insert({
-		["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
+		["<A-k>"] = cmp.mapping.select_prev_item(),
+		["<A-j>"] = cmp.mapping.select_next_item(),
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -97,17 +97,18 @@ cmp.setup({
 		format = function(entry, vim_item)
 			vim_item.kind = kind_icons[vim_item.kind]
 			vim_item.menu = ({
-				nvim_lsp = "",
-				nvim_lua = "",
-				luasnip = "",
-				buffer = "",
-				path = "",
+				nvim_lsp = "nvim_lsp",
+				nvim_lua = "nvim_lua",
+				luasnip = "luasnip",
+				buffer = "buffer",
+				path = "path",
 				emoji = "",
 			})[entry.source.name]
 			return vim_item
 		end,
 	},
 	sources = {
+		-- { name = "grammarly" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
