@@ -63,7 +63,8 @@ local filetype = {
 
 local location = {
   "location",
-  padding = 0,
+  -- padding = { left = 0, right = 0.5 },
+  padding = { left = 0, right =1 },
   colored = false,
 }
 
@@ -146,7 +147,7 @@ lualine.setup {
     lualine_b = { branch, diff },
     lualine_c = {},
     lualine_x = { diagnostics },
-    lualine_y = { filesize, filename },
+    lualine_y = { filesize, filetype, filename },
     lualine_z = { location, progress },
   },
   inactive_sections = {
