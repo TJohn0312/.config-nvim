@@ -15,7 +15,7 @@ local setup = {
     -- No actual key bindings are created
     presets = {
       operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
-      motions = true, -- adds help for motions
+      motions = false, -- adds help for motions
       text_objects = true, -- help for text objects triggered after entering an operator
       windows = true, -- default bindings on <c-w>
       nav = true, -- misc bindings to work with windows
@@ -87,14 +87,15 @@ local mappings = {
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+  -- ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+  ["h"] = { "<cmd>nohlsearch<CR>", "Clear Highlight" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Find files",
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+  ["r"] = { "<cmd>Telescope oldfiles<CR>", "Recent Files" },
 
   p = {
     name = "Packer",
@@ -181,6 +182,19 @@ local mappings = {
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
+
+  d = {
+    name = "DAP",
+    b = { "<cmd>DapToggleBreakpoint<cr>", "Toggle Break"},
+    c = { "<cmd>DapContinue<cr>", "Continue"},
+    i = { "<cmd>DapStepInto<cr>", "Step Into"},
+    o = { "<cmd>DapStepOver<cr>", "Step Over"},
+    O = { "<cmd>DapStepOut<cr>", "Step Out"},
+    r = { "<cmd>DapToggleRepl<cr>", "Toggle Repl"},
+    l = { "<cmd>lua require'dap'.run_last()<cr>", "Run Last"},
+    u = { "<cmd>lua require'dapui'.toggle()<cr>", "DapUI Toggle"},
+    t = { "<cmd>DapTerminate<cr>", "Terminate"},
+  }
 }
 
 which_key.setup(setup)
