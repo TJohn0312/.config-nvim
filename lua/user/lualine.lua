@@ -61,6 +61,7 @@ local filetype = {
   icons_enabled = false,
 }
 
+
 local location = {
   "location",
   -- padding = { left = 0, right = 0.5 },

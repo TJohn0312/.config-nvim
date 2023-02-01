@@ -1,3 +1,4 @@
+-- vim.opt.backupcopy = "yes"
 vim.opt.backup = false                          -- creates a backup file
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1                           -- more space in the neovim command line for displaying messages
@@ -33,7 +34,7 @@ vim.opt.numberwidth = 4                         -- minimal number of columns to 
 vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
 vim.opt.wrap = false                            -- display lines as one long line
 vim.opt.scrolloff = 8                           -- minimal number of screen lines to keep above and below the cursor
-vim.opt.sidescrolloff = 8                       -- minimal number of screen columns to keep to the left and right of the cursor if wrap is `false`
+vim.opt.sidescrolloff = 16                       -- minimal number of screen columns to keep to the left and right of the cursor if wrap is `false`
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.fillchars.eob=" "                       -- show empty lines at the end of a buffer as ` ` {default `~`}
 vim.opt.shortmess:append "c"                    -- hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
