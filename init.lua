@@ -19,5 +19,6 @@ require "user.project"
 require "user.telescope"
 require "user.toggleterm"
 require "user.treesitter" --Language Parser
+require "user.whichkey"
 require "user.bufferline" --Needs to be below
 require "user.lualine"
