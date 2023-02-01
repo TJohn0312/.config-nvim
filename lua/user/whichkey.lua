@@ -87,7 +87,6 @@ local mappings = {
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
-  -- ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "Clear Highlight" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -194,7 +193,7 @@ local mappings = {
     l = { "<cmd>lua require'dap'.run_last()<cr>", "Run Last"},
     u = { "<cmd>lua require'dapui'.toggle()<cr>", "DapUI Toggle"},
     t = { "<cmd>DapTerminate<cr>", "Terminate"},
-  }
+  },
 }
 
 which_key.setup(setup)
