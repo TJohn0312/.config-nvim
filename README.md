@@ -1,14 +1,7 @@
 # A Basic Stable IDE config for Neovim
 
-> Why does this repo exist?
-
-This config attempts to provide a rock solid fully featured starting point for someone new to Neovim, or just tired of maintaining the basic IDE components of their config.
-
-> What makes it "rock solid"?
-
-All of the included plugins are pinned to a version that ensures they are compatible and will not update potentially introducing errors into your config. For every Neovim release I will update this repo along with the community to keep it up to date with the newest versions.
-
-As I mentioned, this config is meant as a starting point for people new to Neovim who want a familiar IDE experience. The config has a very simple structure that makes it easy to add new plugins.
+https://github.com/LunarVim/nvim-basic-ide
+https://github.com/LunarVim/Neovim-from-scratch
 
 ## Install Neovim 0.8
 
@@ -25,22 +18,6 @@ git checkout release-0.8
 make CMAKE_BUILD_TYPE=Release
 sudo make install
 ```
-
-## Install the config
-
-Make sure to remove or move your current `nvim` directory
-
-```sh
-git clone https://github.com/LunarVim/nvim-basic-ide.git ~/.config/nvim
-```
-
-Run `nvim` and wait for the plugins to be installed
-
-**NOTE** First time you will get an error just ignore them and press enter, it will say nvim-ts-context-commentstring is not installed but that is fine just close and reopen nvim and everything should be fine  
-
-**NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim)
-
-**NOTE** Checkout this file for some predefined keymaps: [keymaps](https://github.com/LunarVim/nvim-basic-ide/blob/master/lua/user/keymaps.lua)
 
 ## Get healthy
 
@@ -122,15 +99,29 @@ If you want to install any from there, for example terraform_lsp(which adds more
 ```lua
 -- lua/usr/lsp/mason.lua
 local servers = {
-	"sumneko_lua",
-	"cssls",
-	"html",
-	"tsserver",
-	"pyright",
-	"bashls",
-	"jsonls",
-	"yamlls",
-  "terraform_lsp" -- New LSP
+  "grammarly", --Dictonary
+  "diagnosticls", --general purpose
+
+  "quick_lint_js", --javascript
+  "tsserver", --javascript / typescript
+  "emmet_ls", --Emmit
+  "jsonls", --JSON
+  "sumneko_lua", --lua
+  "dockerls", --Docker
+
+  "arduino_language_server",
+  "bashls",
+  -- "csharp_ls", --dotnet err
+  "omnisharp",
+  "omnisharp_mono",
+  "cssls",
+  "cssmodules_ls",
+  "eslint",--js
+  "html",
+  "jsonls",
+  -- "vtsls",--js, need to update nvim-lspconfig, but can't(lspinfo err)
+  "tailwindcss",
+  "vimls",
 }
 ```
 
@@ -141,10 +132,6 @@ local servers = {
 Make sure the formatter or linter is installed and add it to this setup function: [null-ls](https://github.com/LunarVim/nvim-basic-ide/blob/0e65f504f634026f5765ce6a092612d385d6306d/lua/user/lsp/null-ls.lua#L12)
 
 **NOTE** Some are already setup as examples, remove them if you want
-
-### Plugins
-
-You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-basic-ide/blob/0e65f504f634026f5765ce6a092612d385d6306d/lua/user/plugins.lua#L45)
 
 ---
 
@@ -188,6 +175,3 @@ You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-bas
 - [DAPInstall.nvim](https://github.com/ravenxrz/DAPInstall.nvim)
 
 ---
-
-> The computing scientist's main challenge is not to get confused by the complexities of his own making.
-
