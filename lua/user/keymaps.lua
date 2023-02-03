@@ -33,14 +33,15 @@ keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
-keymap("n", "<C-q>", "<cmd>%bd|e#<CR>", opts)
---%bd = close all, e# = open last
+keymap("n", "<C-q>", "<cmd>BufferLineCloseLeft<cr> <cmd>BufferLineCloseRight<CR>", opts)
+--%bd = close all, %bw = force close all, e# = open last, closeRight
 -- :BufferLinePick<CR>
 -- :BufferLinePickClose<CR>
 -- :BufferLineSortByDirectory
 -- :BufferLineSortByExtention
 -- :BufferLineSortByRelativeDirectory
 -- :BufferLineSortByTabs
+
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
