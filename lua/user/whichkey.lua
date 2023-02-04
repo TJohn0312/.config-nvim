@@ -101,7 +101,6 @@ local mappings = {
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
   ["r"] = { "<cmd>Telescope oldfiles<CR>", "Recent Files" },
-  ["C"] = { "<cmd>Telescope colorscheme<CR>", "Colorschemes" },
 
 
   p = {
@@ -202,6 +201,19 @@ local mappings = {
     u = { "<cmd>lua require'dapui'.toggle()<cr>", "DapUI Toggle"},
     t = { "<cmd>DapTerminate<cr>", "Terminate"},
   },
+
+  C = {
+    name = "Colorscheme",
+    S = { "<cmd>Telescope colorscheme<cr>", "Search"},
+    C = { "<cmd>TransparentToggle<cr>", "Transparent"},
+    n = { "<cmd>colorscheme tokyonight-night<cr>", "tokyonight-N"},
+    t = { "<cmd>colorscheme tokyonight<cr>", "tokyonight"},
+    d = { "<cmd>colorscheme darkplus<cr>", "darkplus"},
+    m = { "<cmd>colorscheme melange<cr>", "melange"},
+    h = { "<cmd>colorscheme habamax<cr>", "habamax"},
+    g = { "<cmd>colorscheme gruvbox<cr>", "gruvbox"},
+    p = { "<cmd>colorscheme poimandres<cr>", "poimandres"},
+  }
 }
 
 which_key.setup(setup)

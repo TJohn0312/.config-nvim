@@ -1,28 +1,46 @@
+local StartingTransparent = false
+local StartingColorscheme = "melange"
+-- "tokyonight" "tokyonight-night" "darkplus" "melange" "gruvbox" "poimandres" "habamax"
+
+
+--colorschemes
 require("tokyonight").setup({
-  transparent = true,
-  styles = {
-    sidebars = "transparent",
-    floats = "dark",
-  }
+  -- transparent = true,
+  -- styles = { sidebars = "transparent", floats = "dark", }
 })
 require("gruvbox").setup({
-  transparent_mode = false,
   contrast = "hard", -- can be "hard", "soft" or empty string
+  -- transparent_mode = false,
 })
 require("darkplus").setup({})
 require("poimandres").setup({
-  disable_background = false,
-  disable_float_background = false,
-  color_scheme = "poimandres", --or "poimandres Storm/Light"
+  -- color_scheme = "poimandres", --or "poimandres Storm/Light"
+  -- disable_background = false,
+  -- disable_float_background = false,
 })
 
-local colorscheme = "tokyonight-night"
--- local colorscheme = "gruvbox"
--- local colorscheme = "darkplus"
--- local colorscheme = "melange" --can't config
--- local colorscheme = "poimandres" --need to change blue2 value
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
+local colorscheme = StartingColorscheme
+local color_status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+if not color_status_ok then
   return
 end
+
+local transparent_status_ok, transparent = pcall(require, "transparent")
+if not transparent_status_ok then
+  return
+end
+
+transparent.setup({
+  enable = StartingTransparent, -- startup value
+  extra_groups = { -- table/string: additional groups that should be cleared
+    -- In particular, when you set it to 'all', that means all available groups
+
+    --BufferLine
+    "BufferLineFill",--background
+    -- "BufferLineTabClose",--X on right (I think)
+    -- "BufferLineSeparator", --gap between tabs
+    -- "BufferLineIndicatorSelected",
+  },
+  exclude = {}, -- table: groups you don't want to clear
+})
