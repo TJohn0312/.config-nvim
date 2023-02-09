@@ -103,7 +103,8 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
   }
-
+  --obsidian
+  use{"epwalsh/obsidian.nvim"}
   -- Git
   use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
 

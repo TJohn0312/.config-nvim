@@ -202,6 +202,27 @@ local mappings = {
     t = { "<cmd>DapTerminate<cr>", "Terminate"},
   },
 
+  o = {
+    name = "Obsidian",
+    r = { "<cmd>ObsidianBacklinks<cr>", "locate refrences"},
+    d = { "<cmd>ObsidianToday<cr>", "Daily"},
+    D = { "<cmd>ObsidianYesterday<cr>", "Yesterday"},
+    v = { "<cmd>ObsidianOpen<cr>", "Obsidian"},-- can have an argument to open certain file
+    n = { "<cmd>ObsidianNew<cr>", "NewNote"}, -- can pass title argument
+    F = { "<cmd>ObsidianSearch<cr>", "Search"}, -- can pass search argument, uses telescope
+    f = { "<cmd>ObsidianQuickSwitch<cr>", "QuickSearch"}, -- can pass search argument, uses telescope
+    l = { "<cmd>ObsidianLink<cr>", "Link"},
+    L = { "<cmd>ObsidianLinkNew<cr>", "LinkNew"},
+
+    o = {
+    name = "commonFiles",
+      h = { "<cmd>e /mnt/c/Users/tylee/Vault/commands/<cr>", "Commands"},
+      k = { "<cmd>e /mnt/c/Users/tylee/Vault/KnowledgeBase/<cr>", "KnowledgeBase"},
+      a = { "<cmd>e /mnt/c/Users/tylee/Vault/therapy/Adjectives.md<cr>", "Adjectives"},
+      f = { "<cmd>e /mnt/c/Users/tylee/Vault/Fs22.md<cr>", "Farm"},
+    }
+  },
+
   C = {
     name = "Colorscheme",
     S = { "<cmd>Telescope colorscheme<cr>", "Search"},

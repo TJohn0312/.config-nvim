@@ -76,6 +76,24 @@ keymap("n", "<S-x>", "<C-v>", opts)
 
 
 
+-- Obsidian follow link under cursor
+keymap( "n", "gf",
+  function()
+    if require("obsidian").util.cursor_on_markdown_link() then
+      return "<cmd>ObsidianFollowLink<CR>"
+    else
+      return "gf"
+    end
+  end,
+  { noremap = false, expr = true}
+)
+
+
+
+
+
+
+
 
 --COMMANDS
 -- New window

@@ -34,6 +34,7 @@ configs.setup({
 
   highlight = {
     enable = true, -- false will disable the whole extension
+    additional_vim_regex_highlighting = { "markdown", "markdown_inline" }, --for obsidian
     disable = {}, -- list of language that will be disabled
   },
   autopairs = {
