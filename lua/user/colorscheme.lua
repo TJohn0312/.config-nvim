@@ -6,10 +6,10 @@ local StartingColorscheme = "melange"
 --colorschemes
 require("tokyonight").setup({
   -- transparent = true,
-  -- styles = { sidebars = "transparent", floats = "dark", }
+  styles = { sidebars = "transparent", floats = "dark", }
 })
 require("gruvbox").setup({
-  contrast = "hard", -- can be "hard", "soft" or empty string
+  contrast = "", -- can be "hard", "soft" or empty string
   -- transparent_mode = false,
 })
 require("darkplus").setup({})
@@ -35,6 +35,9 @@ transparent.setup({
   enable = StartingTransparent, -- startup value
   extra_groups = { -- table/string: additional groups that should be cleared
     -- In particular, when you set it to 'all', that means all available groups
+
+    "NvimTreeNormal",
+    -- 'NvimTreeStatuslineNc',
 
     --BufferLine
     "BufferLineFill",--background
